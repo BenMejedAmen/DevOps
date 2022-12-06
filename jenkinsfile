@@ -1,4 +1,11 @@
 pipeline {
+
+
+    agent any
+    tools {
+		maven 'M2_HOME'
+		jdk 'JAVA_HOME'
+		        }
  
 
     stages {
@@ -8,7 +15,7 @@ pipeline {
 
             steps {
 
-                git 'https://github.com/BenMejedAmen/DevOps.git'
+                git branch: 'amen', url: 'https://github.com/BenMejedAmen/DevOps.git'
             }
         }
 }
