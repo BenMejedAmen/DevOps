@@ -11,7 +11,7 @@ pipeline {
 
             steps {
 
-                git 'https://github.com/BenMejedAmen/DevOps.git
+                git 'https://github.com/BenMejedAmen/DevOps.git'
             }
         }
 }
