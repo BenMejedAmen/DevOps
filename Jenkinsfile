@@ -72,6 +72,28 @@ waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
 }
 }
 }
+ stage('upload war file to nexus'){
+steps{
+script{
+nexusArtifactUploader artifacts: [
+[
+artifactId: 'ExamThourayaS2',
+ classifier: '',
+ file: 'target/Devops.jar',
+ type: 'jar'
+]
+], 
+credentialsId: 'nexus_auth1', 
+groupId: 'tn.esprit', 
+nexusUrl: '192.168.33.10:8081', 
+nexusVersion: 'nexus3', 
+protocol: 'http', 
+repository: 'Devops', 
+version: '0.0.1-SNAPSHOT'
+}
+}
+}
+
 
 
 
