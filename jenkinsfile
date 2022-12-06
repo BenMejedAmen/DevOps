@@ -15,7 +15,7 @@ pipeline {
 
             steps {
 
-                git branch: 'amen', url: 'https://github.com/BenMejedAmen/DevOps.git'
+                git branch: 'master', url: 'https://github.com/BenMejedAmen/DevOps.git'
             }
         }
 }
