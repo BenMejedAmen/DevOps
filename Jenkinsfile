@@ -77,6 +77,7 @@ steps{
 script{
 
 def readPomVersion = readMavenPom file: 'pom.xml'
+def nexusRepo = readMavenPom.version.endswith("SNAPSHOT") ? "Devops-snapshot" : "Devops-release"
 nexusArtifactUploader artifacts: [
 [
 artifactId: 'ExamThourayaS2',
@@ -90,7 +91,7 @@ groupId: 'tn.esprit',
 nexusUrl: '192.168.33.10:8081', 
 nexusVersion: 'nexus3', 
 protocol: 'http', 
-repository: 'Devops', 
+repository: nexusRepo , 
 version: '${readPomVersion.version}'
 }
 }
