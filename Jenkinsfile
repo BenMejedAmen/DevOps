@@ -96,7 +96,33 @@ version: '${readPomVersion.version}'
 }
 }
 }
-
+         stage('Build Docker Image'){
+                      steps {
+                          script{
+          				    sh 'docker image build  -t amen1/devops .  '
+                          }
+                      }
+          		}
+          		stage('Docker login') {
+                                steps {
+                                    script {
+                                        sh 'docker login -u amen1 -p 181JMT2424'}
+                                }
+                                }
+                          stage('Pushing Docker Image') {
+                                steps {
+                                    script {
+                                     sh 'docker push amen1/devops'
+                                    }
+                          }
+                          }
+                          stage('Run Spring && MySQL Containers') {
+                                steps {
+                                    script {
+                                      sh 'docker-compose up -d'
+                                    }
+                                }
+                            }
 
 
 
