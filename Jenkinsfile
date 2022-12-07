@@ -82,7 +82,7 @@ nexusArtifactUploader artifacts: [
 [
 artifactId: 'ExamThourayaS2',
  classifier: '',
- file: 'target/Devops.jar',
+ file: 'target/devops.jar',
  type: 'jar'
 ]
 ], 

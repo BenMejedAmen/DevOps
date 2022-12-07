@@ -46,7 +46,7 @@
 				
 			</plugin>
 		</plugins>
-		<finalName>Devops</finalName>
+		<finalName>devops</finalName>
 	</build>
 
 </project>
