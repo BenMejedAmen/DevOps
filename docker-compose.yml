@@ -14,7 +14,7 @@ services:
      - MYSQL_PASSWORD=asijee
 
   spring_app:
-    image: amen1/devops
+    image: amen1/devopsamen
 
     container_name: devops
     restart: on-failure

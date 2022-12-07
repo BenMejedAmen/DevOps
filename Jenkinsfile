@@ -131,4 +131,20 @@ version: '${readPomVersion.version}'
 
 
 }
+post {
+        success {
+             mail to: "mouldiamenallah.benmejed@esprit.tn",
+                    subject: "Build sucess",
+                    body: "sucess"
+            echo 'successful'
+        }
+        failure {
+             mail to: "mouldiamenallah.benmejed@esprit.tn",
+                    subject: "Build failed",
+                    body: "failed"
+            echo 'failed'
+        }
+      }
+
+
 }
