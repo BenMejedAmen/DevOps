@@ -114,7 +114,9 @@ version: '${readPomVersion.version}'
                           stage('Pushing Docker Image') {
                                 steps {
                                     script {
-                                     sh 'docker push amen1/devops'
+                                     sh 'docker push amen1/$JOB_NAME:v1.$BUILD_ID'
+                                     sh 'docker push amen1/$JOB_NAME:latest'
+                                     
                                     }
                           }
                           }
